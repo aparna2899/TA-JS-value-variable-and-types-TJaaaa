@@ -15,12 +15,15 @@ var bank_balance = 303.91;
 var amount = 0;
 
 while(amount<bank_balance){
+    amount = amount + PHONE_PRICE
     if(amount< SPENDING_THRESHOLD)
-        amount = amount + PHONE_PRICE + ACCESSORY_PRICE;
-    else
-        amount = amount + PHONE_PRICE;
-    amount = amount + PHONE_PRICE * TAX_RATE;
+        amount = amount +  ACCESSORY_PRICE;
 }
-console.log('$'+amount);
+let totalAmount = amount + amount * TAX_RATE;
+console.log('$'+totalAmount);
 
+if(totalAmount<bank_balance)
+console.log('You can afford it')
+else
+console.log(`You can't afford it!`);
 // ⛑ Answer of the above will `$334.76`.
